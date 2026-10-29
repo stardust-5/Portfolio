@@ -1,0 +1,945 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chaiya Herberger — Digital Design & Motion Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #0b0f17;
+        color: #e2e8f0;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      .font-heading {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .glass-card {
+        background: rgba(22, 27, 34, 0.75);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .glass-card:hover {
+        border-color: rgba(168, 85, 247, 0.4);
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col justify-between selection:bg-purple-500 selection:text-white">
+    <!-- NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-[#0b0f17]/80 backdrop-blur-md border-b border-slate-800">
+      <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="#" class="text-xl font-bold font-heading tracking-tight text-white flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-purple-500 inline-block animate-pulse"></span>
+          Chaiya Herberger
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+          <a href="#work" class="hover:text-purple-400 transition">Work</a>
+          <a href="#about" class="hover:text-purple-400 transition">About & Education</a>
+          <a href="#contact" class="hover:text-purple-400 transition">Contact</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <button
+            onclick="openResumeModal()"
+            class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium text-xs rounded-full transition">
+            📄 View Resume
+          </button>
+          <a
+            href="#contact"
+            class="px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white font-medium text-xs rounded-full transition shadow-lg shadow-purple-600/20">
+            Get In Touch
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="max-w-6xl mx-auto px-6 pt-20 pb-12 text-left">
+      <div class="max-w-3xl">
+        <span
+          class="px-3 py-1 bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono rounded-full inline-block mb-4">
+          Miami University • Emerging Technology in Business & Design (ETBD)
+        </span>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">Chaiya Herberger</h1>
+        <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+          Detail-oriented ETBD student with a strong foundation in visual communications, 3D modeling, coding, and
+          engineering principles. Applying design thinking and digital media expertise to create innovative real-world
+          solutions.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-start">
+          <a
+            href="#work"
+            class="px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white text-sm font-semibold rounded-xl transition">
+            View Selected Works
+          </a>
+          <button
+            onclick="openResumeModal()"
+            class="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-semibold rounded-xl border border-slate-700 transition">
+            View Full Resume
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SUMMARY SECTION -->
+    <section id="about" class="max-w-6xl mx-auto px-6 py-8 border-t border-slate-800/80">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card p-6 rounded-2xl">
+          <h3 class="text-sm font-mono text-purple-400 uppercase tracking-wider mb-2">Education</h3>
+          <p class="text-base font-bold text-white">Miami University</p>
+          <p class="text-xs text-slate-300">B.A. Emerging Technology in Business & Design (ETBD)</p>
+          <p class="text-xs text-slate-500 mt-1 font-mono">Expected May 2028</p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl">
+          <h3 class="text-sm font-mono text-purple-400 uppercase tracking-wider mb-2">Core Competencies</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            3D Modeling • Visual Communication • Coding & Digital Design • Design Thinking • Project Management •
+            Critical Thinking
+          </p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl">
+          <h3 class="text-sm font-mono text-purple-400 uppercase tracking-wider mb-2">Organizations</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">Outdoors Adventure Club • National Honor's Society</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTER & PORTFOLIO GRID -->
+    <section id="work" class="max-w-6xl mx-auto px-6 py-12">
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap gap-2 mb-10 border-b border-slate-800 pb-4">
+        <button
+          onclick="filterCategory('all', event)"
+          class="filter-btn active px-4 py-2 rounded-lg text-xs font-medium bg-purple-600 text-white transition">
+          All Works
+        </button>
+        <button
+          onclick="filterCategory('motion', event)"
+          class="filter-btn px-4 py-2 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 hover:text-white transition">
+          Motion Design
+        </button>
+        <button
+          onclick="filterCategory('civic', event)"
+          class="filter-btn px-4 py-2 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 hover:text-white transition">
+          Civic & Graphic Design
+        </button>
+        <button
+          onclick="filterCategory('architecture', event)"
+          class="filter-btn px-4 py-2 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 hover:text-white transition">
+          Spatial & Architecture
+        </button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 1. LEAD MOTION PROJECT -->
+        <div
+          class="project-card motion glass-card rounded-2xl overflow-hidden transition-all duration-300 flex flex-col border-purple-500/40">
+          <div class="relative w-full aspect-video bg-black">
+            <iframe
+              src="https://player.vimeo.com/video/568183862?badge=0&autopause=0&player_id=0&app_id=58479"
+              class="w-full h-full border-0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+          <div class="p-5 flex flex-col justify-between flex-1">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span
+                  class="text-[10px] uppercase tracking-wider font-mono px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30"
+                  >★ Featured Motion Project</span
+                >
+              </div>
+              <h3 class="text-lg font-bold text-white mb-1">Exploded View & Visual Effects Reel</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                Technical exploded view animation sequence combining 2D/3D compositing, spatial assembly, and motion
+                timing.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Vimeo Video 566366797 -->
+        <div
+          class="project-card motion glass-card rounded-2xl overflow-hidden transition-all duration-300 flex flex-col">
+          <div class="relative w-full aspect-video bg-black">
+            <iframe
+              src="https://player.vimeo.com/video/566366797?badge=0&autopause=0&player_id=0&app_id=58479"
+              class="w-full h-full border-0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+          <div class="p-5 flex flex-col justify-between flex-1">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span
+                  class="text-[10px] uppercase tracking-wider font-mono px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20"
+                  >Motion Design</span
+                >
+              </div>
+              <h3 class="text-lg font-bold text-white mb-1">Motion Graphics Reel I</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                Animation reel exploring fluid transitions, kinetic typography, and visual pacing.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Vimeo Video 568648704 -->
+        <div
+          class="project-card motion glass-card rounded-2xl overflow-hidden transition-all duration-300 flex flex-col">
+          <div class="relative w-full aspect-video bg-black">
+            <iframe
+              src="https://player.vimeo.com/video/568648704?badge=0&autopause=0&player_id=0&app_id=58479"
+              class="w-full h-full border-0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+          <div class="p-5 flex flex-col justify-between flex-1">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span
+                  class="text-[10px] uppercase tracking-wider font-mono px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20"
+                  >Motion Design</span
+                >
+              </div>
+              <h3 class="text-lg font-bold text-white mb-1">Brand Identity Motion Showcase</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                Dynamic logo animation and commercial brand identity bumper.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Vimeo Video 562580113 -->
+        <div
+          class="project-card motion glass-card rounded-2xl overflow-hidden transition-all duration-300 flex flex-col">
+          <div class="relative w-full aspect-video bg-black">
+            <iframe
+              src="https://player.vimeo.com/video/562580113?badge=0&autopause=0&player_id=0&app_id=58479"
+              class="w-full h-full border-0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+          <div class="p-5 flex flex-col justify-between flex-1">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span
+                  class="text-[10px] uppercase tracking-wider font-mono px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20"
+                  >Motion Design</span
+                >
+              </div>
+              <h3 class="text-lg font-bold text-white mb-1">Abstract Animation Reel</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                Rhythmic motion piece synchronized with sound design and spatial timing.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Vimeo Video 574195921 -->
+        <div
+          class="project-card motion glass-card rounded-2xl overflow-hidden transition-all duration-300 flex flex-col">
+          <div class="relative w-full aspect-video bg-black">
+            <iframe
+              src="https://player.vimeo.com/video/574195921?badge=0&autopause=0&player_id=0&app_id=58479"
+              class="w-full h-full border-0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+          <div class="p-5 flex flex-col justify-between flex-1">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span
+                  class="text-[10px] uppercase tracking-wider font-mono px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20"
+                  >Motion Design</span
+                >
+              </div>
+              <h3 class="text-lg font-bold text-white mb-1">Creative Short & Concept Art</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                Story-driven motion sequence combining keyframe animation and graphic illustration.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. LAKEWOOD YOUTH COUNCIL FLYER PROJECT -->
+        <div
+          class="project-card civic glass-card rounded-2xl overflow-hidden transition-all duration-300 flex flex-col">
+          <div
+            class="relative w-full aspect-video bg-slate-900 border-b border-slate-800 overflow-hidden flex items-center justify-center p-2">
+            <img
+              src="IMG_5331.png"
+              alt="Lakewood Youth Council Poster Design"
+              class="w-full h-full object-cover object-top rounded-lg transform hover:scale-105 transition duration-500" />
+          </div>
+          <div class="p-5 flex flex-col justify-between flex-1">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span
+                  class="text-[10px] uppercase tracking-wider font-mono px-2 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20"
+                  >Graphic & Illustration</span
+                >
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">Lakewood Youth Council Recruitment Poster</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                Vector graphic poster designed for Lakewood City Youth Council legislative recruitment campaign.
+              </p>
+            </div>
+            <button
+              onclick="openFlyerModal()"
+              class="w-full py-2 bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white font-semibold text-xs rounded-lg border border-slate-700 transition">
+              View Poster & Details
+            </button>
+          </div>
+        </div>
+
+        <!-- 7. BUNTS ROAD PETITION YARD SIGNS -->
+        <div
+          class="project-card civic glass-card rounded-2xl overflow-hidden transition-all duration-300 flex flex-col">
+          <div
+            class="relative w-full aspect-video bg-slate-900 border-b border-slate-800 overflow-hidden flex items-center justify-center p-2">
+            <img
+              src="IMG_6414 (1).png"
+              alt="For Safety Keep Our Sidewalk Stop Path Sign"
+              class="w-full h-full object-cover rounded-lg transform hover:scale-105 transition duration-500" />
+          </div>
+          <div class="p-5 flex flex-col justify-between flex-1">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span
+                  class="text-[10px] uppercase tracking-wider font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20"
+                  >Civic & Graphic Design</span
+                >
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">Bunts Road Community Petition Signage</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-3">
+                Designed lawn signs for the Lakewood, OH community petition campaign opposing the Bunts Road shared-use
+                path project.
+              </p>
+              <a
+                href="https://www.cleveland19.com/2025/04/16/lakewood-residents-are-petitioning-against-shared-use-path-bunts-road/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 text-xs text-amber-400 hover:text-amber-300 font-medium mb-4 transition underline">
+                <span>Read News Coverage on Cleveland 19</span> ↗
+              </a>
+            </div>
+            <button
+              onclick="openBuntsModal()"
+              class="w-full py-2 bg-slate-800 hover:bg-amber-500 text-slate-200 hover:text-black font-semibold text-xs rounded-lg border border-slate-700 transition">
+              View Both Signs & Case Study
+            </button>
+          </div>
+        </div>
+
+        <!-- 8. ARCHITECTURAL SKETCHES -->
+        <div
+          class="project-card architecture glass-card rounded-2xl overflow-hidden transition-all duration-300 flex flex-col">
+          <div
+            class="relative w-full aspect-video bg-slate-950 border-b border-slate-800 overflow-hidden p-2 grid grid-cols-3 gap-1 items-center">
+            <img
+              src="IMG_6265.jpg"
+              alt="Building Perspective Line Study"
+              class="w-full h-20 object-cover rounded bg-white" />
+            <img
+              src="IMG_6269.jpg"
+              alt="Classical Building Value Study"
+              class="w-full h-20 object-cover rounded bg-white" />
+            <img
+              src="IMG_6272.jpg"
+              alt="Interior Atrium Truss Sketch"
+              class="w-full h-20 object-cover rounded bg-white" />
+          </div>
+          <div class="p-5 flex flex-col justify-between flex-1">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span
+                  class="text-[10px] uppercase tracking-wider font-mono px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20"
+                  >Architectural Drawing</span
+                >
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">Architectural Line & Value Perspective Sketches</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                Collection of 6 building elevation and interior atrium perspective studies exploring linework precision
+                and shadow values.
+              </p>
+            </div>
+            <button
+              onclick="openSketchesModal()"
+              class="w-full py-2 bg-slate-800 hover:bg-indigo-600 text-slate-200 hover:text-white font-semibold text-xs rounded-lg border border-slate-700 transition">
+              View All 6 Sketches
+            </button>
+          </div>
+        </div>
+
+        <!-- 9. HUESTON WOODS NATURE CENTER -->
+        <div
+          class="project-card architecture glass-card rounded-2xl overflow-hidden transition-all duration-300 flex flex-col">
+          <div
+            class="relative w-full aspect-video bg-slate-900 border-b border-slate-800 flex items-center justify-center p-4">
+            <div class="text-center">
+              <span class="text-3xl mb-1 block">🌿🏛️</span>
+              <span class="text-sm font-bold text-emerald-400 font-mono">HUESTON WOODS NATURE CENTER</span>
+              <span class="text-[10px] text-slate-400 block mt-1">Terrain-Embedded Structural Design</span>
+            </div>
+          </div>
+          <div class="p-5 flex flex-col justify-between flex-1">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span
+                  class="text-[10px] uppercase tracking-wider font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                  >ARC 201 Spatial Design</span
+                >
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">Hueston Woods Nature Center</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                A structure designed to blend seamlessly into the hillside terrain, acting as a natural extension of the
+                landscape rather than an interruption.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <button
+                onclick="openHuestonModal()"
+                class="w-full py-2 bg-slate-800 hover:bg-emerald-600 text-slate-200 hover:text-white text-xs font-semibold rounded-lg border border-slate-700 transition">
+                View Plans & Model Studies
+              </button>
+              <div class="flex gap-2">
+                <a
+                  href="Hueston Woods.pdf"
+                  target="_blank"
+                  class="flex-1 py-1.5 text-center bg-slate-900 hover:bg-slate-800 text-emerald-400 text-[11px] font-mono rounded border border-emerald-500/30 transition">
+                  📄 Open PDF
+                </a>
+                <a
+                  href="Hueston Woods.pdf"
+                  download="Chaiya_Herberger_Hueston_Woods.pdf"
+                  class="flex-1 py-1.5 text-center bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-mono rounded transition">
+                  📥 Download
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. ARC 102 DESIGN FOUNDATIONS -->
+        <div
+          class="project-card architecture glass-card rounded-2xl overflow-hidden transition-all duration-300 flex flex-col">
+          <div
+            class="relative w-full aspect-video bg-slate-900 border-b border-slate-800 flex items-center justify-center p-4">
+            <div class="text-center">
+              <span class="text-3xl mb-1 block">📐📐</span>
+              <span class="text-sm font-bold text-cyan-400 font-mono">ARC 102 DESIGN FOUNDATIONS</span>
+              <span class="text-[10px] text-slate-400 block mt-1">Parti Models, Drafting & Canopy Concept</span>
+            </div>
+          </div>
+          <div class="p-5 flex flex-col justify-between flex-1">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span
+                  class="text-[10px] uppercase tracking-wider font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20"
+                  >ARC 102 Foundations</span
+                >
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">ARC 102 Spatial & Form Studies</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                Physical parti models, hand drafting elevations, scale proportion studies, and a campus canopy design
+                concept.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <button
+                onclick="openArc102Modal()"
+                class="w-full py-2 bg-slate-800 hover:bg-cyan-600 text-slate-200 hover:text-white text-xs font-semibold rounded-lg border border-slate-700 transition">
+                View Presentation & Reflections
+              </button>
+              <div class="flex gap-2">
+                <a
+                  href="ARC 102 Portfolio_ Final Design Presentation + Reflection.pdf"
+                  target="_blank"
+                  class="flex-1 py-1.5 text-center bg-slate-900 hover:bg-slate-800 text-cyan-400 text-[11px] font-mono rounded border border-cyan-500/30 transition">
+                  📄 Open PDF
+                </a>
+                <a
+                  href="ARC 102 Portfolio_ Final Design Presentation + Reflection.pdf"
+                  download="Chaiya_Herberger_ARC102_Portfolio.pdf"
+                  class="flex-1 py-1.5 text-center bg-cyan-600 hover:bg-cyan-500 text-white text-[11px] font-mono rounded transition">
+                  📥 Download
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUME MODAL LIGHTBOX -->
+    <div
+      id="resumeModal"
+      class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+      <div
+        class="glass-card max-w-3xl w-full max-h-[90vh] overflow-y-auto rounded-2xl p-8 relative border border-slate-700">
+        <button
+          onclick="closeResumeModal()"
+          class="absolute top-4 right-4 text-slate-400 hover:text-white font-bold text-xl">
+          &times;
+        </button>
+
+        <div class="border-b border-slate-800 pb-4 mb-6">
+          <h2 class="text-2xl font-bold text-white">Chaiya Herberger</h2>
+          <p class="text-xs text-purple-400 font-mono mt-1">Emerging Technology in Business and Design (ETBD)</p>
+          <div class="flex flex-wrap gap-4 text-xs text-slate-400 mt-2 font-mono">
+            <span>📍 Lakewood, OH 44107</span>
+            <span>📞 (216) 213-4302</span>
+            <span>📧 herbergerchaiya@gmail.com</span>
+          </div>
+        </div>
+
+        <div class="space-y-6 text-xs text-slate-300 leading-relaxed">
+          <div>
+            <h3
+              class="text-sm font-bold text-white uppercase font-mono text-purple-400 border-b border-slate-800 pb-1 mb-2">
+              Education
+            </h3>
+            <div class="mb-3">
+              <div class="flex justify-between font-bold text-white">
+                <span>Miami University — Oxford, OH</span>
+                <span class="text-slate-400 font-mono">Expected May 2028</span>
+              </div>
+              <p class="text-slate-400">Bachelor of Arts: Emerging Technology in Business and Design (ETBD)</p>
+              <p class="text-slate-500 mt-1">
+                Developing interdisciplinary skills in coding, digital design, and emerging technologies with a focus on
+                applying design thinking and digital media expertise to innovative real-world solutions.
+              </p>
+            </div>
+            <div>
+              <div class="flex justify-between font-bold text-white">
+                <span>Lakewood High School — Lakewood, OH</span>
+                <span class="text-slate-400 font-mono">Graduated May 2024</span>
+              </div>
+              <p class="text-slate-400">
+                National Honor's Society • Varsity Soccer • Mock Trial • Student Athletic Leadership Team
+              </p>
+              <p class="text-slate-500">
+                AP Coursework: US History, European History, Government, Language/Lit Composition, Physics, Calculus
+                AB/BC.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h3
+              class="text-sm font-bold text-white uppercase font-mono text-purple-400 border-b border-slate-800 pb-1 mb-2">
+              Work Experience
+            </h3>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between font-bold text-white">
+                  <span>Giant Eagle — Bakery Clerk (Lakewood, OH)</span>
+                  <span class="text-slate-400 font-mono">July 2026 – August 2026</span>
+                </div>
+                <p class="text-slate-400">
+                  Provided professional customer service, managed packaging/labeling, and maintained food safety
+                  standards.
+                </p>
+              </div>
+              <div>
+                <div class="flex justify-between font-bold text-white">
+                  <span>Winking Lizard — Expo / Host (Lakewood, OH)</span>
+                  <span class="text-slate-400 font-mono">June 2025 – January 2026</span>
+                </div>
+                <p class="text-slate-400">
+                  Collaborated with servers and kitchen staff for smooth peak-hour communication and resolved guest
+                  inquiries.
+                </p>
+              </div>
+              <div>
+                <div class="flex justify-between font-bold text-white">
+                  <span>Target — Team Member (Fairview Park, OH)</span>
+                  <span class="text-slate-400 font-mono">July 2024 – August 2024</span>
+                </div>
+                <p class="text-slate-400">Assisted in inventory management and worked fast-paced shifts efficiently.</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3
+              class="text-sm font-bold text-white uppercase font-mono text-purple-400 border-b border-slate-800 pb-1 mb-2">
+              Skills & Extracurriculars
+            </h3>
+            <div class="grid grid-cols-2 gap-2 text-slate-300">
+              <p>• 3D Modeling & Spatial Design</p>
+              <p>• Visual Communication</p>
+              <p>• Coding & Web Technology</p>
+              <p>• Project Management</p>
+              <p>• Critical Thinking & Reasoning</p>
+              <p>• Outdoors Adventure Club Member</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-slate-800 text-right">
+          <button
+            onclick="closeResumeModal()"
+            class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-xs font-semibold">
+            Close Resume
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- OTHER MODALS -->
+    <div
+      id="flyerModal"
+      class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+      <div
+        class="glass-card max-w-xl w-full max-h-[90vh] overflow-y-auto rounded-2xl p-6 relative border border-slate-700">
+        <button
+          onclick="closeFlyerModal()"
+          class="absolute top-4 right-4 text-slate-400 hover:text-white font-bold text-xl">
+          &times;
+        </button>
+        <span class="text-xs font-mono text-rose-400 bg-rose-500/10 px-2.5 py-1 rounded-full border border-rose-500/20"
+          >Civic Graphic Design</span
+        >
+        <h2 class="text-2xl font-bold text-white mt-3 mb-1">Lakewood Youth Council Recruitment Poster</h2>
+        <p class="text-xs text-slate-400 mb-6">Designed for Lakewood City Council Youth Advisory Board</p>
+        <div class="rounded-xl overflow-hidden border border-slate-700 bg-slate-900 mb-6 flex justify-center">
+          <img src="IMG_5331.png" alt="Lakewood Youth Council Poster" class="max-h-[450px] w-auto object-contain" />
+        </div>
+        <div class="space-y-4 text-xs text-slate-300 leading-relaxed">
+          <h4 class="text-sm font-semibold text-white">Design Details & Campaign Impact</h4>
+          <p>
+            Vector graphic poster created to encourage local students (Grades 8th–12th) to apply for the Lakewood Youth
+            Council.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800 text-right">
+          <button
+            onclick="closeFlyerModal()"
+            class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-xs font-semibold">
+            Close Case Study
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="sketchesModal"
+      class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+      <div
+        class="glass-card max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-2xl p-6 relative border border-slate-700">
+        <button
+          onclick="closeSketchesModal()"
+          class="absolute top-4 right-4 text-slate-400 hover:text-white font-bold text-xl">
+          &times;
+        </button>
+        <span
+          class="text-xs font-mono text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-full border border-indigo-500/20"
+          >Spatial Design & Drawing</span
+        >
+        <h2 class="text-2xl font-bold text-white mt-3 mb-1">Architectural Line & Value Studies</h2>
+        <p class="text-xs text-slate-400 mb-6">
+          Comparative perspective studies exploring structural linework and shadow value shading
+        </p>
+        <div class="space-y-8">
+          <div>
+            <h4 class="text-xs font-bold font-mono text-indigo-400 mb-2 uppercase">
+              Study 1: Rotunda & Classical Facade
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-900/50 p-3 rounded-xl border border-slate-800">
+              <div class="bg-white p-2 rounded-lg">
+                <img src="IMG_6265.jpg" alt="Rotunda Perspective Contour Sketch" class="w-full h-auto rounded" />
+              </div>
+              <div class="bg-white p-2 rounded-lg">
+                <img src="IMG_6266.jpg" alt="Rotunda Perspective Value Fill" class="w-full h-auto rounded" />
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold font-mono text-indigo-400 mb-2 uppercase">
+              Study 2: Classical Portico Elevation
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-900/50 p-3 rounded-xl border border-slate-800">
+              <div class="bg-white p-2 rounded-lg">
+                <img src="IMG_6268.jpg" alt="Portico Elevation Linework" class="w-full h-auto rounded" />
+              </div>
+              <div class="bg-white p-2 rounded-lg">
+                <img src="IMG_6269.jpg" alt="Portico Elevation Shading" class="w-full h-auto rounded" />
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold font-mono text-indigo-400 mb-2 uppercase">
+              Study 3: Interior Structural Atrium & Trusses
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-900/50 p-3 rounded-xl border border-slate-800">
+              <div class="bg-white p-2 rounded-lg">
+                <img src="IMG_6271.jpg" alt="Atrium Truss Linework" class="w-full h-auto rounded" />
+              </div>
+              <div class="bg-white p-2 rounded-lg">
+                <img src="IMG_6272.jpg" alt="Atrium Truss Value Shading" class="w-full h-auto rounded" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800 text-right">
+          <button
+            onclick="closeSketchesModal()"
+            class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-xs font-semibold">
+            Close Case Study
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="huestonModal"
+      class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+      <div
+        class="glass-card max-w-2xl w-full max-h-[90vh] overflow-y-auto rounded-2xl p-6 relative border border-slate-700">
+        <button
+          onclick="closeHuestonModal()"
+          class="absolute top-4 right-4 text-slate-400 hover:text-white font-bold text-xl">
+          &times;
+        </button>
+        <span
+          class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20"
+          >ARC 201 • Hueston Woods Project</span
+        >
+        <h2 class="text-2xl font-bold text-white mt-3 mb-2">Hueston Woods Nature Center</h2>
+        <p class="text-xs text-slate-400 mb-6">Chaiya Herberger • Scale: 1/8" = 1'-0"</p>
+        <div
+          class="bg-slate-900 border border-slate-800 p-5 rounded-xl mb-6 text-slate-300 text-xs italic leading-relaxed">
+          "This nature center is designed to blend seamlessly into the hillside, becoming a natural extension of the
+          landscape rather than an object placed upon it."
+        </div>
+        <div
+          class="mt-6 p-4 bg-emerald-950/30 rounded-xl border border-emerald-500/20 flex items-center justify-between">
+          <div>
+            <h5 class="font-bold text-emerald-400 text-xs">Full Project PDF Document</h5>
+            <p class="text-[11px] text-slate-400">Hueston Woods.pdf</p>
+          </div>
+          <div class="flex gap-2">
+            <a
+              href="Hueston Woods.pdf"
+              target="_blank"
+              class="px-3 py-1.5 bg-slate-900 hover:bg-slate-800 text-emerald-400 text-xs font-mono rounded border border-emerald-500/30 transition"
+              >📄 View</a
+            >
+            <a
+              href="Hueston Woods.pdf"
+              download="Chaiya_Herberger_Hueston_Woods.pdf"
+              class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-mono rounded transition"
+              >📥 Download</a
+            >
+          </div>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800 text-right">
+          <button
+            onclick="closeHuestonModal()"
+            class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-xs font-semibold">
+            Close Case Study
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="arc102Modal"
+      class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+      <div
+        class="glass-card max-w-2xl w-full max-h-[90vh] overflow-y-auto rounded-2xl p-6 relative border border-slate-700">
+        <button
+          onclick="closeArc102Modal()"
+          class="absolute top-4 right-4 text-slate-400 hover:text-white font-bold text-xl">
+          &times;
+        </button>
+        <span class="text-xs font-mono text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded-full border border-cyan-500/20"
+          >ARC 102 • Final Presentation</span
+        >
+        <h2 class="text-2xl font-bold text-white mt-3 mb-2">ARC 102 Design Foundations & Reflections</h2>
+        <p class="text-xs text-slate-400 mb-6">Chaiya Herberger • Physical Models, Elevations & Site Canopies</p>
+        <div class="mt-6 p-4 bg-cyan-950/30 rounded-xl border border-cyan-500/20 flex items-center justify-between">
+          <div>
+            <h5 class="font-bold text-cyan-400 text-xs">ARC 102 Portfolio PDF Presentation</h5>
+            <p class="text-[11px] text-slate-400">ARC 102 Portfolio_ Final Design Presentation + Reflection.pdf</p>
+          </div>
+          <div class="flex gap-2">
+            <a
+              href="ARC 102 Portfolio_ Final Design Presentation + Reflection.pdf"
+              target="_blank"
+              class="px-3 py-1.5 bg-slate-900 hover:bg-slate-800 text-cyan-400 text-xs font-mono rounded border border-cyan-500/30 transition"
+              >📄 View</a
+            >
+            <a
+              href="ARC 102 Portfolio_ Final Design Presentation + Reflection.pdf"
+              download="Chaiya_Herberger_ARC102_Portfolio.pdf"
+              class="px-3 py-1.5 bg-cyan-600 hover:bg-cyan-500 text-white text-[11px] font-mono rounded transition"
+              >📥 Download</a
+            >
+          </div>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800 text-right">
+          <button
+            onclick="closeArc102Modal()"
+            class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-xs font-semibold">
+            Close Case Study
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="buntsModal"
+      class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+      <div
+        class="glass-card max-w-3xl w-full max-h-[90vh] overflow-y-auto rounded-2xl p-6 relative border border-slate-700">
+        <button
+          onclick="closeBuntsModal()"
+          class="absolute top-4 right-4 text-slate-400 hover:text-white font-bold text-xl">
+          &times;
+        </button>
+        <span
+          class="text-xs font-mono text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/20"
+          >Civic Advocacy Graphic Design</span
+        >
+        <h2 class="text-2xl font-bold text-white mt-3 mb-1">Bunts Road Petition Yard Signs</h2>
+        <p class="text-xs text-slate-400 mb-6">Lakewood, OH • Grassroots Advocacy Campaign Design</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div class="rounded-xl overflow-hidden border border-slate-700 bg-slate-900">
+            <img src="IMG_6414 (1).png" alt="Sign 1" class="w-full h-auto object-cover" />
+          </div>
+          <div class="rounded-xl overflow-hidden border border-slate-700 bg-slate-900">
+            <img src="IMG_6382.png" alt="Sign 2" class="w-full h-auto object-cover" />
+          </div>
+        </div>
+        <div class="space-y-4 text-xs text-slate-300 leading-relaxed">
+          <h4 class="text-sm font-semibold text-white">Design Rationale & Press</h4>
+          <p>
+            Designed two distinct high-visibility street signs for Lakewood residents petitioning against the city's
+            proposed shared-use path on Bunts Road.
+          </p>
+          <p>
+            Read the feature on
+            <a
+              href="https://www.cleveland19.com/2025/04/16/lakewood-residents-are-petitioning-against-shared-use-path-bunts-road/"
+              target="_blank"
+              class="text-amber-400 underline hover:text-amber-300"
+              >Cleveland 19 News</a
+            >.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800 text-right">
+          <button
+            onclick="closeBuntsModal()"
+            class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-xs font-semibold">
+            Close Case Study
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT & FOOTER SECTION -->
+    <footer id="contact" class="max-w-6xl mx-auto px-6 pt-16 pb-8 border-t border-slate-800 w-full">
+      <div class="max-w-2xl mb-12">
+        <h2 class="text-3xl font-extrabold text-white mb-4">Contact Info.</h2>
+        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+          I am actively seeking design and motion graphics internship roles. Feel free to reach out to review my full
+          portfolio or discuss upcoming opportunities.
+        </p>
+        <div class="space-y-3 text-sm text-slate-300 font-mono">
+          <p>📧 herbergerchaiya@gmail.com</p>
+          <p>📞 (216) 213-4302</p>
+          <p>📍 Lakewood, OH 44107 • Oxford, OH</p>
+        </div>
+      </div>
+
+      <!-- COPYRIGHT FOOTER -->
+      <div class="pt-8 border-t border-slate-900 text-center text-xs text-slate-500 font-mono">
+        ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Chaiya Herberger. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR INTERACTION -->
+    <script>
+      function filterCategory(category, evt) {
+        const cards = document.querySelectorAll(".project-card");
+        const buttons = document.querySelectorAll(".filter-btn");
+
+        buttons.forEach((btn) => {
+          btn.classList.remove("bg-purple-600", "text-white");
+          btn.classList.add("bg-slate-800", "text-slate-400");
+        });
+
+        if (evt && evt.currentTarget) {
+          evt.currentTarget.classList.remove("bg-slate-800", "text-slate-400");
+          evt.currentTarget.classList.add("bg-purple-600", "text-white");
+        }
+
+        cards.forEach((card) => {
+          if (category === "all" || card.classList.contains(category)) {
+            card.style.display = "flex";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
+
+      function openResumeModal() {
+        document.getElementById("resumeModal").classList.remove("hidden");
+      }
+      function closeResumeModal() {
+        document.getElementById("resumeModal").classList.add("hidden");
+      }
+
+      function openFlyerModal() {
+        document.getElementById("flyerModal").classList.remove("hidden");
+      }
+      function closeFlyerModal() {
+        document.getElementById("flyerModal").classList.add("hidden");
+      }
+
+      function openSketchesModal() {
+        document.getElementById("sketchesModal").classList.remove("hidden");
+      }
+      function closeSketchesModal() {
+        document.getElementById("sketchesModal").classList.add("hidden");
+      }
+
+      function openHuestonModal() {
+        document.getElementById("huestonModal").classList.remove("hidden");
+      }
+      function closeHuestonModal() {
+        document.getElementById("huestonModal").classList.add("hidden");
+      }
+
+      function openArc102Modal() {
+        document.getElementById("arc102Modal").classList.remove("hidden");
+      }
+      function closeArc102Modal() {
+        document.getElementById("arc102Modal").classList.add("hidden");
+      }
+
+      function openBuntsModal() {
+        document.getElementById("buntsModal").classList.remove("hidden");
+      }
+      function closeBuntsModal() {
+        document.getElementById("buntsModal").classList.add("hidden");
+      }
+    </script>
+  </body>
+</html>
